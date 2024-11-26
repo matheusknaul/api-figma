@@ -2,7 +2,8 @@ import requests
 import json
 
 def get_json(ID_FILE, TOKEN):
-    """Colocar o URL e o Header aqui"""
+    url = f"https://api.figma.com/v1/files/{ID_FILE}"
+    headers = {"X-Figma-Token": TOKEN}
     request = requests.get(url, headers=headers)
 
     if request.status_code == 200:
